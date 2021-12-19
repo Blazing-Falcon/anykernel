@@ -40,6 +40,7 @@ write /proc/sys/vm/dirty_ratio 30
 write /proc/sys/vm/dirty_background_ratio 10
 write /proc/sys/vm/dirty_expire_centisecs 3000
 write /proc/sys/vm/dirty_writeback_centisecs 3000
+write /proc/sys/vm/overcommit_ratio 100
 write /proc/sys/vm/stat_interval 10
 write /proc/sys/vm/vfs_cache_pressure 120
 write /proc/sys/vm/watermark_scale_factor 30
