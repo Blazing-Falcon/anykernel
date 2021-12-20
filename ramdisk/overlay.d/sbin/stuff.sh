@@ -30,14 +30,20 @@ sleep 1m
 # task turbo
 write /sys/module/task_turbo/parameters/feats 15
 
+# sched stuff
+write /proc/sys/kernel/sched_latency_ns 4000000
+write /proc/sys/kernel/sched_min_granularity_ns 400000
+write /proc/sys/kernel/sched_wakeup_granularity_ns 500000
+write /proc/sys/kernel/sched_migration_cost_ns 250000
+
 # stune stuff
 write /dev/stune/schedtune.boost 6
 write /dev/stune/foreground/schedtune.boost 8
 write /dev/stune/top-app/schedtune.boost 12
 
 # vm and mm stuff
-write /proc/sys/vm/dirty_ratio 30
-write /proc/sys/vm/dirty_background_ratio 10
+write /proc/sys/vm/dirty_ratio 50
+write /proc/sys/vm/dirty_background_ratio 20
 write /proc/sys/vm/dirty_expire_centisecs 3000
 write /proc/sys/vm/dirty_writeback_centisecs 3000
 write /proc/sys/vm/overcommit_ratio 100
@@ -83,3 +89,4 @@ done
 # misc stuff
 write /proc/sys/kernel/printk_devkmsg off
 write /proc/sys/kernel/sched_big_task_rotation 1
+write /proc/perfmgr/syslimiter/syslimiter_force_disable 1
