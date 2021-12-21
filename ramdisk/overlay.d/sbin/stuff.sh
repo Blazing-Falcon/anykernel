@@ -35,11 +35,13 @@ write /proc/sys/kernel/sched_latency_ns 4000000
 write /proc/sys/kernel/sched_min_granularity_ns 400000
 write /proc/sys/kernel/sched_wakeup_granularity_ns 500000
 write /proc/sys/kernel/sched_migration_cost_ns 250000
+write /proc/sys/kernel/sched_nr_migrate 8
 
 # stune stuff
 write /dev/stune/schedtune.boost 6
 write /dev/stune/foreground/schedtune.boost 8
 write /dev/stune/top-app/schedtune.boost 12
+write /dev/stune/top-app/schedtune.prefer_idle 1
 
 # vm and mm stuff
 write /proc/sys/vm/dirty_ratio 50
