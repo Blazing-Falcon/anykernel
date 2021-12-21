@@ -28,7 +28,7 @@ write() {
 sleep 1m
 
 # task turbo
-write /sys/module/task_turbo/parameters/feats 15
+#write /sys/module/task_turbo/parameters/feats 15
 
 # sched stuff
 write /proc/sys/kernel/sched_latency_ns 4000000
@@ -53,6 +53,7 @@ write /proc/sys/vm/watermark_scale_factor 30
 write /proc/sys/vm/page-cluster 0
 write /proc/sys/vm/swappiness 190
 write /sys/kernel/mm/swap/vma_ra_enabled false
+write /sys/module/lowmemorykiller/parameters/minfree 9559,19118,28677,47795,66913,143385
 
 # tcp stuff
 write /proc/sys/net/ipv4/tcp_ecn 1
@@ -83,7 +84,7 @@ do
 	write "$queue/read_ahead_kb" 256
 
 	# Reduce the maximum number of I/O requests in exchange for latency
-	write "$queue/nr_requests" 256
+	write "$queue/nr_requests" 512
 done
 
 # misc stuff
