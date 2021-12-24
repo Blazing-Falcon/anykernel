@@ -55,7 +55,7 @@ write /proc/sys/vm/watermark_scale_factor 30
 write /proc/sys/vm/page-cluster 0
 write /proc/sys/vm/swappiness 190
 write /sys/kernel/mm/swap/vma_ra_enabled false
-write /sys/module/lowmemorykiller/parameters/minfree 9559,19118,28677,47795,66913,143385
+write /sys/module/lowmemorykiller/parameters/minfree 9569,19138,28707,38276,57414,66983
 
 # tcp stuff
 write /proc/sys/net/ipv4/tcp_ecn 1
@@ -92,4 +92,3 @@ done
 # misc stuff
 write /proc/sys/kernel/printk_devkmsg off
 write /proc/sys/kernel/sched_big_task_rotation 1
-write /proc/perfmgr/syslimiter/syslimiter_force_disable 1

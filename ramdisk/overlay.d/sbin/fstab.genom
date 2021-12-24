@@ -1,1 +1,1 @@
-/dev/block/zram0 none swap defaults zramsize=100%,zram_backingdev_size=512M,swapprio=2
+/dev/block/zram0 none swap defaults zramsize=100%,zram_backingdev_size=256M,swapprio=2
