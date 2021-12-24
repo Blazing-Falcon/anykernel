@@ -28,7 +28,7 @@ write() {
 sleep 1m
 
 # task turbo
-#write /sys/module/task_turbo/parameters/feats 15
+write /sys/module/task_turbo/parameters/feats 15
 
 # sched stuff
 write /proc/sys/kernel/sched_latency_ns 4000000
