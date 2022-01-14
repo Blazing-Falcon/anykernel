@@ -28,7 +28,7 @@ write() {
 sleep 1m
 
 # task turbo
-write /sys/module/task_turbo/parameters/feats 15
+#write /sys/module/task_turbo/parameters/feats 15
 
 # sched stuff
 write /proc/sys/kernel/sched_latency_ns 4000000
@@ -41,7 +41,6 @@ write /proc/sys/kernel/sched_nr_migrate 8
 write /dev/stune/schedtune.boost 6
 write /dev/stune/foreground/schedtune.boost 8
 write /dev/stune/top-app/schedtune.boost 12
-write /dev/stune/top-app/schedtune.prefer_idle 1
 
 # vm and mm stuff
 write /proc/sys/vm/dirty_ratio 50
@@ -50,12 +49,8 @@ write /proc/sys/vm/dirty_expire_centisecs 3000
 write /proc/sys/vm/dirty_writeback_centisecs 3000
 write /proc/sys/vm/overcommit_ratio 100
 write /proc/sys/vm/stat_interval 10
-write /proc/sys/vm/vfs_cache_pressure 120
-write /proc/sys/vm/watermark_scale_factor 30
 write /proc/sys/vm/page-cluster 0
-write /proc/sys/vm/swappiness 190
 write /sys/kernel/mm/swap/vma_ra_enabled false
-write /sys/module/lowmemorykiller/parameters/minfree 9569,19138,28707,38276,57414,66983
 
 # tcp stuff
 write /proc/sys/net/ipv4/tcp_ecn 1
@@ -92,3 +87,4 @@ done
 # misc stuff
 write /proc/sys/kernel/printk_devkmsg off
 write /proc/sys/kernel/sched_big_task_rotation 1
+write /sys/devices/system/cpu/sched/sched_forked_ramup_factor 15
