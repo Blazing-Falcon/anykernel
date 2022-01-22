@@ -28,7 +28,7 @@ write() {
 sleep 1m
 
 # task turbo
-#write /sys/module/task_turbo/parameters/feats 15
+write /sys/module/task_turbo/parameters/feats 15
 
 # sched stuff
 write /proc/sys/kernel/sched_latency_ns 4000000
@@ -50,6 +50,7 @@ write /proc/sys/vm/dirty_writeback_centisecs 3000
 write /proc/sys/vm/overcommit_ratio 100
 write /proc/sys/vm/stat_interval 10
 write /proc/sys/vm/page-cluster 0
+write /proc/sys/vm/watermark_scale_factor 30
 write /sys/kernel/mm/swap/vma_ra_enabled false
 
 # tcp stuff
